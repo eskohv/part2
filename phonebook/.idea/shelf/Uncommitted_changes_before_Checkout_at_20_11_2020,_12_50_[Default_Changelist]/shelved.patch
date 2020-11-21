@@ -1,0 +1,16 @@
+Index: src/services/server.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import axios from 'axios'\nconst baseUrl = 'http://localhost:3001/Persons'\n\n\nconst getAll = () => {\n    const request = axios.get(baseUrl)\n    return request.then(response => response.data)\n}\n\nconst create = (newObject) => {\n    const request = axios.post(baseUrl, newObject)\n    return request.then(response => response.data)\n}\n\nconst deletePerson = (id) => {\n    const request = axios.delete(`${baseUrl}/${id}`)\n    return request.then(response => response.data)\n}\n\nconst update = (id, newObject) =>{\n    const request = axios.put(`${baseUrl}/${id}`, newObject)\n    return request.then(response => response.data)\n}\nexport default {create, getAll, deletePerson, update}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/services/server.js	(revision 3ddd503ea24decfcec0cbfd4ede743d991da5b59)
++++ src/services/server.js	(date 1605869408420)
+@@ -1,5 +1,5 @@
+ import axios from 'axios'
+-const baseUrl = 'http://localhost:3001/Persons'
++const baseUrl = 'http://localhost:3001/api/persons'
+ 
+ 
+ const getAll = () => {
